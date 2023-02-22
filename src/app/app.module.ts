@@ -16,6 +16,7 @@ import { LoginComponent } from './login/login.component';
 import {ReactiveFormsModule} from "@angular/forms";
 import {MatInputModule} from "@angular/material/input";
 import { RegisterComponent } from './register/register.component';
+import {MatMenuModule} from "@angular/material/menu";
 
 
 @NgModule({
@@ -37,6 +38,7 @@ import { RegisterComponent } from './register/register.component';
     MatTableModule,
     ReactiveFormsModule,
     MatInputModule,
+    MatMenuModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

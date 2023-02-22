@@ -26,7 +26,7 @@ body {
   max-width: 1320px;
   margin: 0 auto;
 
-  @media screen and (max-width: $desktop) {
+  @media #{$desktop-lg} {
     padding: 0 20px;
   }
 }
@@ -90,6 +90,10 @@ header {
   nav {
     height: 96px;
 
+    @media #{$tablet-lg} {
+      display: none;
+    }
+
     ul {
       display: flex;
       list-style: none;
@@ -116,6 +120,23 @@ header {
       }
     }
   }
+
+  .burger {
+    display: none;
+    height: 96px;
+    line-height: 96px;
+
+    @media #{$tablet-lg} {
+      display: inherit;
+    }
+  }
+}
+
+.burger-active {
+  width: 100% !important;
+  border: none !important;
+  border-bottom: 1px solid $accent !important;
+  color: $dark !important;
 }
 
 
@@ -132,6 +153,15 @@ footer {
     &-wrapper {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr 1fr;
+
+      @media #{$desktop-lg} {
+        grid-template-columns: 1fr 1fr;
+        justify-items: center;
+        grid-gap: 40px 20px;
+      }
+      @media #{$tablet} {
+        grid-template-columns: 1fr;
+      }
     }
 
     &-detail {
