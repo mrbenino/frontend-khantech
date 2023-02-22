@@ -1,0 +1,48 @@
+@import '/src/assets/style/variables';
+
+.pagination {
+
+  &-wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin: 60px 0 80px;
+  }
+
+  &-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border: 1px solid $accent;
+    border-radius: 20px;
+    background: unset;
+    color: $accent;
+
+    &:hover {
+      cursor: pointer;
+      background: $accent;
+      color: $main-bg;
+    }
+
+    &.pre {
+      margin-right: 14px;
+    }
+
+    &.next {
+      margin-left: 14px;
+    }
+
+    &.current {
+      background: $accent;
+      color: $main-bg;
+    }
+  }
+
+  &-dots {
+    width: 40px;
+    text-align: center;
+    line-height: 40px;
+  }
+}

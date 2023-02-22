@@ -1,0 +1,32 @@
+.stars-wrapper {
+  position: relative;
+
+  .crop {
+    overflow: hidden;
+    z-index: 20;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    .star-top {
+      width: 85px;
+    }
+  }
+
+  .star-bg {
+    box-sizing: border-box;
+    width: 85px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+  }
+}
+
+mat-icon {
+  box-sizing: border-box;
+  width: 17px;
+  height: 17px;
+  font-size: 18px;
+  color: #F26532;
+}

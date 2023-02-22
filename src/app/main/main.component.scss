@@ -1,0 +1,252 @@
+@import '/src/assets/style/variables';
+
+
+//section top
+
+
+.top-head {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 23px;
+  margin: 55px auto 80px;
+
+  &--banner-post {
+    display: flex;
+    width: 872px;
+    height: 432px;
+
+
+    &-img {
+      width: 424px;
+      height: 432px;
+      object-fit: cover;
+    }
+
+    &-body {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-sizing: border-box;
+      background: $secondary-bg;
+      padding: 0 24px 30px 24px;
+
+      &-title {
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 24px;
+        color: $accent;
+      }
+
+      &-topic {
+        font-weight: 500;
+        font-size: 22px;
+        line-height: 40px;
+        color: $dark;
+      }
+
+      &-text {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 28px;
+        color: $body-text;
+      }
+    }
+
+    &-details {
+      display: flex;
+      align-items: center;
+      justify-content: start;
+      gap: 30px;
+
+
+      &-data {
+        color: $small-secondary-text;
+      }
+
+      &-author {
+        text-transform: none;
+        text-decoration: none;
+        color: $accent;
+      }
+
+      &-publication {
+        color: $small-secondary-text;
+
+        .mat-icon {
+          align-items: center;
+          line-height: 12px;
+          font-size: 12px;
+          height: 12px;
+          width: 12px;
+        }
+      }
+    }
+  }
+
+  &-news {
+
+    &-top-head {
+      color: $dark;
+      margin: 0 0 28px;
+    }
+
+    &-wrapper {
+      display: grid;
+      grid-template-rows: 1fr 1fr 1fr;
+      gap: 12px;
+    }
+
+    &--item {
+      width: 425px;
+      height: 115px;
+      position: relative;
+
+      &-img {
+        width: 425px;
+        height: 115px;
+        object-fit: cover;
+      }
+
+      &-inner {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: start;
+        gap: 10px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 425px;
+        height: 115px;
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
+
+        &:hover {
+          cursor: pointer;
+          background: linear-gradient(0deg, rgba(8, 128, 174, 0.8), rgba(8, 128, 174, 0.8));
+        }
+      }
+
+      &-title {
+        color: $main-bg;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 27px;
+        margin: 0 32px;
+      }
+
+      &-data {
+        color: $main-bg;
+        margin: 0 32px;
+      }
+    }
+  }
+}
+
+
+//section testimonials
+
+
+.testimonials {
+  background: $secondary-bg;
+
+  &-inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &-title {
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 56px;
+    color: $dark;
+    margin-top: 80px;
+  }
+
+  .reviews {
+
+    &-wrapper {
+      display: grid;
+      grid-template-columns: 244px 244px 244px 244px 244px;
+      grid-template-rows: 360px 360px 360px;
+      gap: 40px 24px ;
+
+      .review {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        &-commentary {
+          position: relative;
+          padding: 20px 24px;
+          background-color: $main-bg;
+          box-shadow: 0 0 0 1px #C1C7D0;
+          box-sizing: border-box;
+          height: 292px;
+
+          &:before {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            left: -1px;
+            border-bottom: 19px solid transparent;
+            border-left: 19px solid #C1C7D0;
+          }
+
+          &:after {
+            content: '';
+            position: absolute;
+            bottom: -17px;
+            left: 0;
+            border-bottom: 18px solid transparent;
+            border-left: 18px solid $main-bg;
+          }
+
+          &-employee {
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 28px;
+            margin: 0;
+            color: $dark;
+          }
+
+          &-employees-position {
+            color: $dark;
+          }
+
+          &-review {
+            font-style: italic;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 28px;
+            color: $body-text;
+            overflow: hidden;
+            max-height: 192px;
+          }
+        }
+
+        &-rating {
+          display: grid;
+          grid-template-columns: 50px 1fr;
+          grid-gap: 12px;
+
+          &-user-photo {
+            width: 50px;
+          }
+
+          &-reviewer {
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 150%;
+            color: $dark;
+          }
+
+          &-block {
+
+          }
+        }
+      }
+    }
+  }
+}

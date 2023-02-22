@@ -1,0 +1,19 @@
+<div class="container">
+  <button type="button" mat-button color="primary" (click)="fileInput.click()">Choose File</button>
+  <input hidden (change)="onFileSelected()" #fileInput type="file" id="file">
+  <button mat-button color="warn" (click)="removeRecord()">Delete</button>
+
+  <table>
+    <tr *ngFor="let item of dataSource">
+      <th>{{item.id}}</th>
+      <th>{{item.reviewer}}</th>
+      <th>{{item.email}}</th>
+      <th>{{item.review}}</th>
+      <th>{{item.rating}}</th>
+      <th>{{item.employee}}</th>
+      <th>{{item.employees_position}}</th>
+      <th>{{item.company}}</th>
+      <th>{{item.company_description}}</th>
+    </tr>
+  </table>
+</div>

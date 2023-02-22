@@ -1,0 +1,75 @@
+<div class="main-wrapper">
+  <header>
+    <div class="header-inner container">
+      <div class="header--company-block">
+        <div class="header--company-block-wrapper-logo">
+          <img class="header--company-block-logo" src="../assets/icon/logo-header.svg" alt="khan tech logotype">
+        </div>
+
+        <div class="header--company-block--help">
+          <p class="small-text">Need Help?</p>
+          <a href="tel:5145439936">(514) 543-9936</a>
+        </div>
+      </div>
+
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Book now</a></li>
+          <li><a href="#">Shop</a></li>
+          <li class="active"><a href="#">Blog</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <div class="main-inner">
+    <router-outlet></router-outlet>
+  </div>
+
+  <footer>
+    <div class="container">
+      <div class="footer-wrapper">
+        <div class="footer-detail-col">
+          <h3 class="footer-detail-title">Departments</h3>
+          <ul class="footer-detail-list">
+            <li class="footer-detail-item"><a href="#">Medical</a></li>
+            <li class="footer-detail-item"><a href="#">Pharmaceuticals</a></li>
+            <li class="footer-detail-item"><a href="#">Medical Equipment</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-detail-col">
+          <h3 class="footer-detail-title">Quick Links</h3>
+          <ul class="footer-detail-list">
+            <li class="footer-detail-item"><a href="#">What do we do?</a></li>
+            <li class="footer-detail-item"><a href="#">Our expertise</a></li>
+            <li class="footer-detail-item"><a href="#">Request an Appointment</a></li>
+            <li class="footer-detail-item"><a href="#">Book with a Specialist</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-detail-col">
+          <h3 class="footer-detail-title">Head Office</h3>
+          <ul class="footer-detail-list">
+            <li class="footer-detail-item"><a href="#"><mat-icon> location_on</mat-icon>4517 Washington Ave. Manchester, Kentucky 39495</a></li>
+            <li class="footer-detail-item"><a href="#"><mat-icon> email</mat-icon>darrell@mail.com</a></li>
+            <li class="footer-detail-item"><a href="tel:6715550110"><mat-icon> call</mat-icon>(671) 555-0110</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-detail-col">
+          <img src="/assets/icon/logo-footer.svg" alt="">
+          <p class="footer-detail-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras blandit tincidunt ut sed. Velit euismod integer convallis ornare eu.</p>
+        </div>
+      </div>
+
+      <div class="reserved small-text">©2021 All Rights Reserved</div>
+    </div>
+  </footer>
+</div>
+
+<app-spinner></app-spinner>

@@ -1,0 +1,82 @@
+<section class="top-head container">
+  <div class="top-head--banner-post">
+    <div>
+      <img class="top-head--banner-post-img" src="/assets/img/beautiful-girl-is-engaged-yoga-studio%20(1).jpg" alt="">
+    </div>
+    <div class="top-head--banner-post-body">
+      <div>
+        <h5 class="top-head--banner-post-body-title">Pharmaceuticals</h5>
+        <h3 class="top-head--banner-post-body-topic">A Sure Way To Get Rid Of Your Back Ache Problem</h3>
+        <p class="top-head--banner-post-body-text">If you have tried everything, but still seem to suffer from snoring,
+          don’t give up. Before turning to surgery, consider shopping for anti-snore devices. These products do not
+          typically require a prescription, are economically priced and may just be the answer that you are looking for.
+          However, as is the case when shopping for anything, there are a lot of anti-snore devices out there and…</p>
+      </div>
+      <div class="top-head--banner-post-details">
+        <span class="top-head--banner-post-details-data small-text">28 Feb 2021
+          <a class="top-head--banner-post-details-author small-text" href="">Jim Sullivan</a>
+        </span>
+        <span class="top-head--banner-post-details-publication small-text">
+          <mat-icon>query_builder</mat-icon>6 min read</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="top-head-news">
+    <h2 class="top-head-news-top-head">Our Latest News</h2>
+
+    <div class="top-head-news-wrapper">
+      <div class="top-head-news--item">
+        <img class="top-head-news--item-img" src="/assets/img/anti-cellulite-massage-luxury-spa.jpg" alt="news image">
+        <div class="top-head-news--item-inner">
+          <h4 class="top-head-news--item-title">Basic Swedish Back Massage Techniques</h4>
+          <span class="top-head-news--item-data small-text">28 Feb 2021</span>
+        </div>
+      </div>
+
+      <div class="top-head-news--item">
+        <img class="top-head-news--item-img" src="/assets/img/close-up-man-writing-code-laptop.jpg" alt="news image">
+        <div class="top-head-news--item-inner">
+          <h4 class="top-head-news--item-title">How to Learn Coding for Beginners</h4>
+          <span class="top-head-news--item-data small-text">28 Feb 2021</span>
+        </div>
+      </div>
+
+      <div class="top-head-news--item">
+        <img class="top-head-news--item-img"
+             src="/assets/img/side-view-cropped-unrecognizable-business-people-working-common-desk.jpg"
+             alt="news image">
+        <div class="top-head-news--item-inner">
+          <h4 class="top-head-news--item-title">Google’s Influence Over Think Tanks</h4>
+          <span class="top-head-news--item-data small-text">28 Feb 2021</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="testimonials">
+  <div class="testimonials-inner container">
+    <h1 class="testimonials-title">Testimonials</h1>
+    <div class="reviews-wrapper" *ngIf="reviews">
+      <div class="review" *ngFor="let review of reviews">
+        <div class="review-commentary">
+          <h5 class="review-commentary-employee">{{review.employee}}</h5>
+          <span class="review-commentary-employees-position small-text">{{review.employees_position}}</span>
+          <p class="review-commentary-review">{{review.review}}</p>
+        </div>
+        <div class="review-rating">
+          <img class="review-rating-user-photo" src="/assets/icon/user-photo..svg" alt="">
+          <div>
+            <span class="review-rating-reviewer">{{review.reviewer}}</span>
+            {{review.rating}}
+            <app-rate *ngIf="review.rating"
+                      [rate]="review.rating"></app-rate>
+          </div>
+        </div>
+      </div>
+    </div>
+    <app-pagination [links]="links"
+    (_linkNumber)=getAllReviews($event)></app-pagination>
+  </div>
+</section>
