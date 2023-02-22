@@ -10,16 +10,11 @@ import {TokenStorageService} from "./token-storage.service";
   providedIn: 'root'
 })
 export class ReviewService {
-  token;
+  token: string | null | undefined;
   
-  headers;
+  headers: HttpHeaders | undefined;
   constructor(private http: HttpClient,
-              private tokenStorageService: TokenStorageService) {
-    this.token = this.tokenStorageService.getToken();
-    this.headers = new HttpHeaders({
-      'Authorization': `Bearer ${this.token}`
-    });
-  }
+              private tokenStorageService: TokenStorageService) { }
   getAllReviews(pageNumber: number = 1) {
     return this.http
       .get<{
@@ -32,9 +27,15 @@ export class ReviewService {
   }
   
   sendFileCsv(data: any) {
+    this.token = this.tokenStorageService.getToken();
+    this.headers = new HttpHeaders({
+      'Authorization': `Bearer ${this.token}`
+    });
+  
     const httpOptions = {
       headers: this.headers
     };
+  
     return this.http.post<{success: string, list: {
         'id': number,
         'reviewer': string,
@@ -52,14 +53,24 @@ export class ReviewService {
   }
   
   removeRecord() {
+    this.token = this.tokenStorageService.getToken();
+    this.headers = new HttpHeaders({
+      'Authorization': `Bearer ${this.token}`
+    });
+    
     const httpOptions = {
       headers: this.headers
     };
-    return this.http.delete(`${environment.reviewApi}/review`, httpOptions)
+    
+    return this.http.delete<{message: string}>(`${environment.reviewApi}/review`, httpOptions)
       .pipe(catchError((err) => throwError(err.message)));
   }
   
   login(data: any) {
     return this.http.post<{token: string}>(`${environment.reviewApi}/login`, data);
+  }
+  
+  register(data: any) {
+    return this.http.post<{token: string}>(`${environment.reviewApi}/register`, data);
   }
 }

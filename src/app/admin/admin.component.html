@@ -1,8 +1,16 @@
 <div class="container">
-  <button type="button" mat-button color="primary" (click)="fileInput.click()">Choose File</button>
-  <input hidden (change)="onFileSelected()" #fileInput type="file" id="file">
-  <button mat-button color="warn" (click)="removeRecord()">Delete</button>
+  <div class="btn-block">
+    <button type="button" mat-raised-button color="primary" (click)="fileInput.click()">Choose File</button>
+    <input hidden (change)="onFileSelected()" #fileInput type="file" id="file">
 
+    <button mat-raised-button color="accent" (click)="removeRecord()">Delete</button>
+
+    <button mat-raised-button color="warn" (click)="logOut()">Log Out</button>
+  </div>
+
+  <div class="center">
+    <h3>{{message}}</h3>
+  </div>
   <table>
     <tr *ngFor="let item of dataSource">
       <th>{{item.id}}</th>
@@ -16,4 +24,5 @@
       <th>{{item.company_description}}</th>
     </tr>
   </table>
+
 </div>
