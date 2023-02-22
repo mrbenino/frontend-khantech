@@ -9,12 +9,26 @@ import {ILinkPages} from "../../interfece/ILinkPages";
 export class PaginationComponent implements OnInit {
   
   @Input() links!: Array<ILinkPages>;
+  @Input() current_page!: number;
+  @Input() last_page!: number;
   @Output() _linkNumber: EventEmitter<number> = new EventEmitter();
-  constructor() { }
+  constructor() {
 
-  ngOnInit(): void {}
+  }
+
+  ngOnInit(): void { }
   
-  page(linkNumber: string) {
-    this._linkNumber.emit(Number(linkNumber));
+  page(pagesLabel: string) {
+    if (pagesLabel === 'pre') {
+      this._linkNumber.emit(this.current_page - 1);
+      return;
+    }
+  
+    if (pagesLabel === 'next') {
+      this._linkNumber.emit(this.current_page + 1);
+      return;
+    }
+    
+    this._linkNumber.emit(Number(pagesLabel));
   }
 }

@@ -11,6 +11,9 @@ import {SpinnerService} from "../core/services/spinner.service";
 })
 export class MainComponent implements OnInit {
   reviews: Array<IReview> = [];
+  
+  current_page = 0;
+  last_page = 0;
   links: Array<ILinkPages> = [];
   n = 4;
   
@@ -27,6 +30,10 @@ export class MainComponent implements OnInit {
     if (!n) {return}
     this.reviewService.getAllReviews(n).subscribe(result => {
       this.links = result.links;
+      this.current_page = result.current_page;
+      this.last_page = result.last_page;
+      this.links.shift();
+      this.links.pop();
       this.reviews = result.data;
       this.spinnerService.hide();
     });

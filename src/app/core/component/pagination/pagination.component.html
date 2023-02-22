@@ -1,5 +1,8 @@
 <div class="pagination-wrapper">
-  <button class="pagination-btn pre"><mat-icon>chevron_left</mat-icon></button>
-  <button class="pagination-btn" *ngFor="let link of links" (click)="page(link.label)">{{link.label}}</button>
-  <button class="pagination-btn next"><mat-icon>chevron_right</mat-icon></button>
+  <button class="pagination-btn pre" *ngIf="current_page != 1" (click)="page('pre')"><mat-icon>chevron_left</mat-icon></button>
+  <button class="pagination-btn"
+          *ngFor="let link of links"
+          [ngClass]="{'current': link.active}"
+          (click)="page(link.label)">{{link.label}}</button>
+  <button class="pagination-btn next" *ngIf="current_page < last_page" (click)="page('next')"><mat-icon>chevron_right</mat-icon></button>
 </div>

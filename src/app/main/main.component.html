@@ -76,7 +76,10 @@
         </div>
       </div>
     </div>
-    <app-pagination [links]="links"
-    (_linkNumber)=getAllReviews($event)></app-pagination>
+    <app-pagination *ngIf="current_page != 0"
+                    [links]="links"
+                    [current_page]="current_page"
+                    [last_page]="last_page"
+                    (_linkNumber)=getAllReviews($event)></app-pagination>
   </div>
 </section>
